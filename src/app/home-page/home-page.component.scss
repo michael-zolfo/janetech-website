@@ -1,0 +1,71 @@
+@import '../../styles.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    border: 2px solid var(--gs0);
+    border-radius: 8px;
+    height: 100vh;
+    font-family: 'Nunito Sans';
+  }
+  
+  .section {
+    scroll-snap-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+  }
+  .section:nth-child(1) { /* Video & Logo */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    img {
+      z-index: 1;
+    }
+
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    
+    .color-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      height: 100vh;
+      opacity: 0.2;
+    }
+  }
+  .section:nth-child(2) { /* section text */
+    background: #000;
+    flex-direction: column;
+
+    @media screen and (max-width: 375px) {
+      font-size: 27px;
+    }
+
+  }
+  .section:nth-child(3) {
+    background: blanchedalmond;
+  }
+  .section:nth-child(4) {
+    background: lightcoral;
+    color: white;
+  }
+  @media screen and (max-width: 375px) {
+    // TODO add media query for different 
+    // phone sizes
+  }
+    
