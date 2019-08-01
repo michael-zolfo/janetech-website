@@ -29,6 +29,7 @@
   height: 100vh;
   justify-content: center;
   scroll-snap-align: center;
+  scroll-padding-top: 15vh;
 }
 .section:nth-child(1) { /* Video & Logo */
   overflow: hidden;
@@ -79,5 +80,48 @@
 
 }
 .section:nth-child(3) {
-  color: #000;  
+  color: #000;
+  flex-direction: column;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+
+  .content {
+    color: #FFF;
+    
+    .action {
+      font-family: "Lora";
+      font-size: 125px;
+      font-weight: normal;
+      height: 160px;
+      letter-spacing: 0px;
+      text-align: center;
+
+      .conversation {
+        font-family: 'Nunito Sans';
+        font-size: 23px;
+        font-weight: 500;
+        height: 45px;
+        letter-spacing: 1px;
+        line-height: 45px;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    .action:hover .conversation {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 4s linear 0s, opacity 400ms;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    .content {
+      font-size: 33px;
+      font-weight: 900;
+      margin-bottom: 75px;
+      max-width: 300px;
+    }
+  }
 }
