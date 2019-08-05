@@ -75,7 +75,7 @@
     }
   }
 
-  @media screen and (max-width: 1064px){
+  @media screen and (max-width: 1164px){
     .content {
       max-width: 753px;
       font-size: 47px;
@@ -93,6 +93,13 @@
     .content {
       max-width: 537px;
       font-size: 34px;
+    }
+  }
+
+  @media screen and (max-width: 551px){
+    .content {
+      max-width: 427px;
+      font-size: 30px;
     }
   }
 
@@ -182,7 +189,7 @@
     }
   }
 
-  @media screen and (min-width: 1065px){
+  @media screen and (min-width: 1165px){
     .content {
       max-width: 1080px;
       font-size: 65px;
@@ -210,11 +217,25 @@
     }
   }
 
+  @media screen and (max-width: 551px){
+    .content {
+      max-width: 427px;
+      font-size: 30px;
+    }
+  }
+
   @media screen and (max-width: 415px) {
     .content {
       font-size: 33px;
       margin-bottom: 25px;
       max-width: 300px;
+
+      .action {
+        .conversation {
+          opacity: 1;
+          visibility: visible !important;
+        }
+      }
     }
   }
 }
