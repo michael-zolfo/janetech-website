@@ -106,8 +106,9 @@
   @media screen and (max-width: 415px) {
     .content {
       font-size: 33px;
-      margin-bottom: 25px;
-      max-width: 300px;
+      max-width: 325px;
+      margin-bottom: 35px;
+      margin-top: -10px;
     }
   }
 }
@@ -161,32 +162,7 @@
   }
 
   @media screen and (max-width: 415px) {
-    .content {
-      font-size: 33px;
-      font-weight: 900;
-      margin-bottom: 75px;
-      max-width: 300px;
-  
-      .action {
-        font-size: 35px;
-        font-weight: bold;
-        height: 45px;
-        letter-spacing: 0px;
-        text-align: center;
-        width: 313px;
-  
-        .conversation {
-          opacity: 1;
-          visibility: visible;
-          font-size: 23px;
-          font-weight: 500;
-          height: 60px;
-          letter-spacing: 1px;
-          line-height: 30px;
-          text-align: center;
-        }
-      }
-    }
+    
   }
 
   @media screen and (min-width: 1165px){
@@ -226,14 +202,25 @@
 
   @media screen and (max-width: 415px) {
     .content {
-      font-size: 33px;
-      margin-bottom: 25px;
-      max-width: 300px;
-
+      font-size: 30px;
+  
       .action {
+        font-size: 35px;
+        font-weight: bold;
+        height: 45px;
+        letter-spacing: 0px;
+        text-align: center;
+        width: 313px;
+  
         .conversation {
           opacity: 1;
-          visibility: visible !important;
+          visibility: visible;
+          font-size: 23px;
+          font-weight: 500;
+          height: 60px;
+          letter-spacing: 1px;
+          line-height: 30px;
+          text-align: center;
         }
       }
     }
