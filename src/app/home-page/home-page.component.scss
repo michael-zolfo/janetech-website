@@ -172,6 +172,13 @@
     }
   }
 
+  @media screen and (max-width: 1164px){
+    .content {
+      max-width: 753px;
+      font-size: 47px;
+    }
+  }
+
   @media screen and (max-width: 1064px){
     .content {
       max-width: 753px;
