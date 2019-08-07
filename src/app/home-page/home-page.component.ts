@@ -28,8 +28,8 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(private window: Window) {}
 
-  @HostListener("window:scroll", ['$event'])
-  onWindowScroll(_event: Event) {
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
     this.pageYOffsetSubject.next(this.window.pageYOffset);
   }
 
