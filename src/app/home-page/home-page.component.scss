@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
 $logo-animation-transition-speed: 1s;
+$logo-sticky-width: 35%;
+$logo-width: 85%;
 
 .sticky {
   min-height: 100%;
@@ -32,7 +34,7 @@ $logo-animation-transition-speed: 1s;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: $logo-width;
 
   -webkit-animation-name: grow; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: $logo-animation-transition-speed; 
@@ -40,10 +42,10 @@ $logo-animation-transition-speed: 1s;
   animation-duration: $logo-animation-transition-speed; 
 
   &.animate {
-    width: 50%;
-    -webkit-animation-name: shrink; /* Safari 4.0 - 8.0 */
+    width: $logo-sticky-width;
+    -webkit-animation-name: shrink-logo; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: $logo-animation-transition-speed; 
-    animation-name: shrink;
+    animation-name: shrink-logo;
     animation-duration: $logo-animation-transition-speed; 
   }
 }
@@ -107,49 +109,50 @@ $logo-animation-transition-speed: 1s;
   }
 }
 
+// --- Animations  --- //
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes shrink {
-  from {width: 85%; }
-  to {width: 50%; }
+@-webkit-keyframes shrink-logo {
+  from { width: $logo-width; }
+  to { width: $logo-sticky-width; }
 }
 
 /* Standard syntax */
-@keyframes shrink {
-  from {width: 85%;}
-  to {width: 50%;}
+@keyframes shrink-logo {
+  from {width: $logo-width;}
+  to { width: $logo-sticky-width;}
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes grow {
-  from {width: 50%; top: 3%; }
-  to {width: 85%; top: 40%; }
+  from { width: $logo-sticky-width; }
+  to { width: $logo-width;  }
 }
 
 /* Standard syntax */
 @keyframes grow {
-  from {width: 50%; top: 3%; }
-  to {width: 85%; top: 40%; }
+  from { width: $logo-sticky-width; }
+  to { width: $logo-width; }
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes center-logo {
-  from {top: 3%; }
+  from { top: 3%; }
   to { top: 40%; }
 }
 
 /* Standard syntax */
 @keyframes center-logo {
-  from {top: 3%; }
+  from { top: 3%; }
   to { top: 40%; }
 }
 
 @-webkit-keyframes top-logo {
-  to {top: 3%; }
+  to { top: 3%; }
   from { top: 40%; }
 }
 
 /* Standard syntax */
 @keyframes top-logo {
-  to {top: 3%; }
+  to { top: 3%; }
   from { top: 40%; }
 }

@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.resizeObservable = this.pageYOffsetSubject
                                 .asObservable()
-                                .pipe(debounceTime(40))
+                                .pipe(debounceTime(10))
                                 .subscribe((e:number) => this.onWindowScrollEvent(e))
   }
 
@@ -58,7 +58,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private onWindowScrollEvent(pageYOffset: number): void {
-    this.isSticky = pageYOffset > (this.navbarOffsetTop)
+    this.isSticky = (pageYOffset - 200) > this.navbarOffsetTop
   }
 
 }
