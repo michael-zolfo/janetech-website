@@ -29,7 +29,15 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @HostListener("window:scroll", ['$event'])
   onWindowScroll(event: Event|any) {
-    this.pageYOffsetSubject.next(event.path[1].pageYOffset)
+    let pageY: number = 0;
+
+    if (event && event.path) {
+      pageY = event.path[1].pageYOffset;
+    }
+    else {
+      pageY = event.pageY
+    }
+    this.pageYOffsetSubject.next(pageY);
   }
 
   ngOnInit(): void {
@@ -50,7 +58,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private onWindowScrollEvent(pageYOffset: number): void {
-    this.isSticky = pageYOffset > (this.navbarOffsetTop - 150)
+    this.isSticky = pageYOffset > (this.navbarOffsetTop)
   }
 
 }
