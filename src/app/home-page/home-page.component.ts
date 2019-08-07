@@ -4,8 +4,7 @@ import {
   AfterViewInit,
   ElementRef,
   OnInit,
-  OnDestroy, 
-  AfterViewChecked} from '@angular/core';
+  OnDestroy } from '@angular/core';
 import { HostListener } from "@angular/core";
 import { debounceTime } from "rxjs/operators";
 import { Subject } from 'rxjs/internal/Subject';
@@ -16,10 +15,9 @@ import { Subject } from 'rxjs/internal/Subject';
     styleUrls: ['./home-page.component.scss']
   })
 
-export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
+export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   
   public isSticky: boolean = false;
-  public isAnimated: boolean = false; 
 
   @ViewChild('header', {static: false}) header: ElementRef;
   private navbarOffsetTop: number;
@@ -49,10 +47,6 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit, Afte
 
   ngAfterViewInit(): void {
     this.navbarOffsetTop = this.header.nativeElement.offsetTop;
-  }
-
-  ngAfterViewChecked(): void {
-    this.isAnimated = true;
   }
 
   private onWindowScrollEvent(pageYOffset: number): void {
