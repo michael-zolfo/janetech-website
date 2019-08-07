@@ -12,7 +12,8 @@ import { Subject } from 'rxjs/internal/Subject';
 @Component({
     selector: 'app-home',
     templateUrl: './home-page.component.html',
-    styleUrls: ['./home-page.component.scss']
+    styleUrls: ['./home-page.component.scss'],
+    providers: [{ provide: Window, useValue: window }]
   })
 
 export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -25,19 +26,11 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private pageYOffsetSubject = new Subject<number>();
 
-  constructor() {}
+  constructor(private window: Window) {}
 
   @HostListener("window:scroll", ['$event'])
-  onWindowScroll(event: Event|any) {
-    let pageY: number = 0;
-
-    if (event && event.path) {
-      pageY = event.path[1].pageYOffset;
-    }
-    else {
-      pageY = event.pageY
-    }
-    this.pageYOffsetSubject.next(pageY);
+  onWindowScroll(_event: Event) {
+    this.pageYOffsetSubject.next(this.window.pageYOffset);
   }
 
   ngOnInit(): void {
