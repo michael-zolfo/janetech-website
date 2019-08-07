@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.resizeObservable = this.pageYOffsetSubject
                                 .asObservable()
-                                .pipe(debounceTime(15))
+                                .pipe(debounceTime(40))
                                 .subscribe((e:number) => this.onWindowScrollEvent(e))
   }
 

@@ -1,5 +1,9 @@
-<div #header class="header sticky init" [ngClass]="{ glue: isSticky }">
-  <img src="../../assets/images/logo.png" class="sticky-img" />
+<div #header class="sticky" [ngClass]="{ animate: isSticky }">
+  <img
+    src="../../assets/images/logo.png"
+    class="sticky-img"
+    [ngClass]="{ animate: isSticky }"
+  />
 </div>
 
 <video
@@ -8,7 +12,7 @@
   loop
   muted
   id="myVideo"
-  style="min-height: 100%; min-width: 100%; position: fixed; top: 0; left: 0; display:block"
+  style="min-height: 100%; min-width: 100%; position: fixed; top: 0; left: 0; display:block; pointer-events: none;"
 >
   <source src="../../assets/videos/background.mp4" type="video/mp4" />
 </video>
