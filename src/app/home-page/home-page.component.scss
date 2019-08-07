@@ -83,7 +83,10 @@ $logo-animation-transition-speed: 1s;
 }
 
 .copy {
-  font-size: 5vw
+  font-size: 5vw;
+  @media only screen and (max-width: 501px) {
+    font-size: 6vw;
+  }
 }
 
 .connect {
@@ -102,8 +105,6 @@ $logo-animation-transition-speed: 1s;
     font-weight: 500;
     opacity: 1;
   }
-
-  
 }
 
 /* Safari 4.0 - 8.0 */
