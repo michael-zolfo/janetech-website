@@ -22,14 +22,12 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   public copyInview: boolean = false;
   public connectInview: boolean = false;
 
-  @ViewChild('header', {static: false}) header: ElementRef;
   @ViewChild('copyContainer', {static: false}) copyContainer: ElementRef;
   @ViewChild('connectContainer', {static: false}) connectContainer: ElementRef;
 
   private resizeObservable;
   private copyContainerOffSetTop: number;
   private connectContainerOffSetTop: number;
-
   private pageYOffsetSubject = new Subject<number>();
 
   constructor(private window: Window) {}
@@ -66,7 +64,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     if (!this.connectInview) {
-      this.connectInview = (pageYOffset - 800) > this.connectContainerOffSetTop;
+      this.connectInview = (pageYOffset - 700) > this.connectContainerOffSetTop;
     }
   }
 
