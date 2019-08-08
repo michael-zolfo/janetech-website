@@ -64,11 +64,11 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isSticky = true
 
     if (!this.copyInview) {
-      this.copyInview = (pageYOffset - 100) > this.copyContainerOffSetTop;
+      this.copyInview = (pageYOffset) > this.copyContainerOffSetTop;
     }
 
     if (!this.connectInview) {
-      this.connectInview = (pageYOffset - 900) > this.connectContainerOffSetTop;
+      this.connectInview = (pageYOffset - 800) > this.connectContainerOffSetTop;
     }
   }
 
