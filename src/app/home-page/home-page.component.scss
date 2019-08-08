@@ -6,34 +6,31 @@ $logo-animation-transition-speed: 1s;
 $logo-sticky-width: 35%;
 $logo-width: 75%;
 
+@mixin animation-styles($name, $duration) {
+  -webkit-animation-name: $name; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: $duration; 
+  animation-name: $name;
+  animation-duration: $duration; 
+}
+
 @mixin animation-fade-in {
   opacity: 1;
-  -webkit-animation-name: fade-in; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: $logo-animation-transition-speed; 
-  animation-name: fade-in;
-  animation-duration: $logo-animation-transition-speed; 
+  @include animation-styles(fade-in, $logo-animation-transition-speed);
 }
 
 .sticky {
-  // min-height: 100%;
   opacity: 1;
   position: fixed;
   top: 37%;
   width: 100%;
   z-index: 1;
 
-  -webkit-animation-name: center-logo; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: $logo-animation-transition-speed; 
-  animation-name: center-logo;
-  animation-duration: $logo-animation-transition-speed;
+  @include animation-styles(slide-logo-up-three-precent, $logo-animation-transition-speed);
 
   &.animate {
     top: 3%;
 
-    -webkit-animation-name: top-logo; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: $logo-animation-transition-speed; 
-    animation-name: top-logo;
-    animation-duration: $logo-animation-transition-speed;
+    @include animation-styles(slide-logo-up, $logo-animation-transition-speed);
   }
 }
 
@@ -43,17 +40,13 @@ $logo-width: 75%;
   margin-right: auto;
   width: $logo-width;
   opacity: 1;
-  -webkit-animation-name: fade-in; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: $logo-animation-transition-speed; 
-  animation-name: fade-in;
-  animation-duration: $logo-animation-transition-speed; 
+
+  @include animation-styles(fade-in, $logo-animation-transition-speed);
 
   &.animate {
     width: $logo-sticky-width;
-    -webkit-animation-name: shrink-logo; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: $logo-animation-transition-speed; 
-    animation-name: shrink-logo;
-    animation-duration: $logo-animation-transition-speed; 
+
+    @include animation-styles(shrink-logo, $logo-animation-transition-speed);
   }
 }
 
@@ -158,24 +151,24 @@ $logo-width: 75%;
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes center-logo {
+@-webkit-keyframes slide-logo-up-three-precent {
   from { top: 40%; }
   to { top: 37%; }
 }
 
 /* Standard syntax */
-@keyframes center-logo {
+@keyframes slide-logo-up-three-precent {
   from { top: 40%; }
   to { top: 37%; }
 }
 
-@-webkit-keyframes top-logo {
+@-webkit-keyframes slide-logo-up {
   to { top: 3%; }
   from { top: 37%; }
 }
 
 /* Standard syntax */
-@keyframes top-logo {
+@keyframes slide-logo-up {
   to { top: 3%; }
   from { top: 37%; }
 }
