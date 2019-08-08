@@ -111,6 +111,8 @@ $logo-width: 75%;
   opacity: 10;
   pointer-events: all;
 
+  cursor: -webkit-grab; cursor: grab;
+
   .hover-content {
     font-size: 3vw;
     font-weight: 500;
