@@ -61,9 +61,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // TODO create a fade in when in view component!
   private onWindowScrollEvent(pageYOffset: number): void {
-    if (!this.isSticky) {
-      this.isSticky = (pageYOffset - 200) > this.headerOffSetTop
-    }
+    this.isSticky = true
 
     if (!this.copyInview) {
       this.copyInview = (pageYOffset - 100) > this.copyContainerOffSetTop;
