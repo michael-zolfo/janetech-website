@@ -51,7 +51,9 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private onWindowScrollEvent(pageYOffset: number): void {
-    this.isSticky = (pageYOffset - 200) > this.navbarOffsetTop
+    if (!this.isSticky) {
+      this.isSticky = (pageYOffset - 200) > this.navbarOffsetTop
+    }
   }
 
 }
