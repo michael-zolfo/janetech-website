@@ -59,6 +59,10 @@ $logo-width: 75%;
   position: relative;
   text-align: center;
   pointer-events: none;
+
+  &.finished {
+    height: 30vh;
+  }
 }
 
 .overlay-container {

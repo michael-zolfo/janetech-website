@@ -27,7 +27,6 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('connectContainer', {static: false}) connectContainer: ElementRef;
 
   private resizeObservable;
-  private headerOffSetTop: number;
   private copyContainerOffSetTop: number;
   private connectContainerOffSetTop: number;
 
@@ -54,7 +53,6 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.headerOffSetTop = this.header.nativeElement.offsetTop;
     this.copyContainerOffSetTop = this.copyContainer.nativeElement.offsetTop;
     this.connectContainerOffSetTop = this.connectContainer.nativeElement.offsetTop;
   }

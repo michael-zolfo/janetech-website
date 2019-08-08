@@ -1,4 +1,4 @@
-<div #header class="sticky" [ngClass]="{ animate: isSticky }">
+<div class="sticky" [ngClass]="{ animate: isSticky }">
   <img
     src="../../assets/images/logo.png"
     class="sticky-img"
@@ -17,7 +17,7 @@
   <source src="../../assets/videos/background.mp4" type="video/mp4" />
 </video>
 
-<div class="section" style="height: 50vh"></div>
+<div class="section" [ngClass]="{ finished: isSticky }"></div>
 
 <div class="section">
   <div class="overlay-container">
