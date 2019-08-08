@@ -60,6 +60,17 @@ $logo-width: 75%;
   text-align: center;
   pointer-events: none;
 
+  @media only screen and (max-width: 501px) {
+    
+    &.section:nth-child(4) {
+      height: 70vh;
+    }
+  
+    &.section:last-child {
+      height: 50vh;
+    }
+  }
+
   &.finished {
     height: 30vh;
   }
@@ -100,6 +111,10 @@ $logo-width: 75%;
   font-size: 4vw;
   opacity: 0;
 
+  @media only screen and (max-width: 501px) {
+    opacity: 1;
+  }
+
   &.animate {
     @include animation-fade-in();
   }
@@ -111,16 +126,21 @@ $logo-width: 75%;
   opacity: 0;
   pointer-events: all;
 
+  @media only screen and (max-width: 501px) {
+    opacity: 1;
+  }
+
   cursor: -webkit-grab; cursor: grab;
 
   .hover-content {
-    font-size: 3vw;
+    font-size: 2vw;
     font-weight: 500;
     opacity: 0;
     pointer-events: all;
 
     @media only screen and (max-width: 501px) {
       opacity: 1;
+      font-size: 3vw;
     }
   }
 
