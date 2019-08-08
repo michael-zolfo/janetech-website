@@ -28,7 +28,7 @@
   <div class="overlay-container">
     <div class="color-overlay"></div>
     <div class="container-content">
-      <div class="copy">
+      <div #copyContainer class="copy" [ngClass]="{ animate: copyInview }">
         <p>
           JaneTech provides world class design and development services
           specializing in highly complex digital experiences.
@@ -46,12 +46,16 @@
   <div class="overlay-container">
     <div class="color-overlay"></div>
     <div class="container-content">
-      <div class="connect">
+      <div
+        #connectContainer
+        class="connect"
+        [ngClass]="{ animate: connectInview }"
+      >
         Connect
       </div>
-      <div class="email">
+      <div class="email" [ngClass]="{ animate: connectInview }">
         Hello@JaneTech.io
-        <div class="animate">
+        <div class="hover-content">
           We're always open to have a conversation.
         </div>
       </div>

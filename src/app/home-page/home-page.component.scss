@@ -6,6 +6,14 @@ $logo-animation-transition-speed: 1s;
 $logo-sticky-width: 35%;
 $logo-width: 75%;
 
+@mixin animation-fade-in {
+  opacity: 1;
+  -webkit-animation-name: fade-in; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: $logo-animation-transition-speed; 
+  animation-name: fade-in;
+  animation-duration: $logo-animation-transition-speed; 
+}
+
 .sticky {
   min-height: 100%;
   opacity: 1;
@@ -86,6 +94,11 @@ $logo-width: 75%;
 
 .copy {
   font-size: 5vw;
+  opacity: 0;
+
+  &.animate {
+    @include animation-fade-in();
+  }
   @media only screen and (max-width: 501px) {
     font-size: 6vw;
   }
@@ -96,17 +109,29 @@ $logo-width: 75%;
   color: rgb(80, 227, 194);
   font-weight: 300;
   font-size: 4vw;
+  opacity: 0;
+
+  &.animate {
+    @include animation-fade-in();
+  }
 }
 
 .email {
   font-weight: bold;
   font-size: 10vw;
+  opacity: 10;
 
-  .animate {
+  &.animate {
+    @include animation-fade-in();
+  }
+
+  .hover-content {
     font-size: 3vw;
     font-weight: 500;
-    opacity: 1;
+    opacity: 0;
   }
+
+
 }
 
 // --- Animations  --- //
@@ -156,3 +181,4 @@ $logo-width: 75%;
   to { top: 3%; }
   from { top: 37%; }
 }
+

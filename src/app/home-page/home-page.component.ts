@@ -19,10 +19,17 @@ import { Subject } from 'rxjs/internal/Subject';
 export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   
   public isSticky: boolean = false;
+  public copyInview: boolean = false;
+  public connectInview: boolean = false;
 
   @ViewChild('header', {static: false}) header: ElementRef;
-  private navbarOffsetTop: number;
+  @ViewChild('copyContainer', {static: false}) copyContainer: ElementRef;
+  @ViewChild('connectContainer', {static: false}) connectContainer: ElementRef;
+
   private resizeObservable;
+  private headerOffSetTop: number;
+  private copyContainerOffSetTop: number;
+  private connectContainerOffSetTop: number;
 
   private pageYOffsetSubject = new Subject<number>();
 
@@ -47,12 +54,23 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.navbarOffsetTop = this.header.nativeElement.offsetTop;
+    this.headerOffSetTop = this.header.nativeElement.offsetTop;
+    this.copyContainerOffSetTop = this.copyContainer.nativeElement.offsetTop;
+    this.connectContainerOffSetTop = this.connectContainer.nativeElement.offsetTop;
   }
 
+  // TODO create a fade in when in view component!
   private onWindowScrollEvent(pageYOffset: number): void {
     if (!this.isSticky) {
-      this.isSticky = (pageYOffset - 200) > this.navbarOffsetTop
+      this.isSticky = (pageYOffset - 200) > this.headerOffSetTop
+    }
+
+    if (!this.copyInview) {
+      this.copyInview = (pageYOffset - 100) > this.copyContainerOffSetTop;
+    }
+
+    if (!this.connectInview) {
+      this.connectInview = (pageYOffset - 900) > this.connectContainerOffSetTop;
     }
   }
 
