@@ -25,7 +25,7 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('copyContainer', {static: false}) copyContainer: ElementRef;
   @ViewChild('connectContainer', {static: false}) connectContainer: ElementRef;
 
-  private resizeObservable;
+  private scrollObservable;
   private copyContainerOffSetTop: number;
   private connectContainerOffSetTop: number;
   private pageYOffsetSubject = new Subject<number>();
@@ -38,15 +38,15 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.resizeObservable = this.pageYOffsetSubject
+    this.scrollObservable = this.pageYOffsetSubject
                                 .asObservable()
                                 .pipe(debounceTime(10))
                                 .subscribe((e:number) => this.onWindowScrollEvent(e))
   }
 
   ngOnDestroy(): void {
-    if (this.resizeObservable != null) {
-      this.resizeObservable.unsubscribe();
+    if (this.scrollObservable != null) {
+      this.scrollObservable.unsubscribe();
     }
   }
 
