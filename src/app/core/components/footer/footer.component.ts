@@ -1,10 +1,7 @@
 import {
   Component,
-  ViewChild,
-  AfterViewInit,
-  ElementRef,
-  OnInit,
-  OnDestroy } from '@angular/core';
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
