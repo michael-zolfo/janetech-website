@@ -118,11 +118,12 @@ $logo-width: 75%;
   padding-top: 15%;
   color: rgb(80, 227, 194);
   font-weight: 300;
-  font-size: 5vw;
+  font-size: 3vw;
   opacity: 0;
 
   @media only screen and (max-width: 501px) {
     opacity: 1;
+    font-size: 4vw;
   }
 
   &.animate {
