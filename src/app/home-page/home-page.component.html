@@ -1,4 +1,4 @@
-<div #header class="sticky" [ngClass]="{ animate: isSticky }">
+<div class="sticky" [ngClass]="{ animate: isSticky }">
   <img
     src="../../assets/images/logo.png"
     class="sticky-img"
@@ -7,28 +7,22 @@
 </div>
 
 <video
+  id="background-video"
   poster="../../assets/images/background-poster.jpeg"
   autoplay
   loop
   muted
-  id="myVideo"
-  style="min-height: 100%; min-width: 100%; position: fixed; top: 0; left: 0; display:block; pointer-events: none;"
 >
   <source src="../../assets/videos/background.mp4" type="video/mp4" />
 </video>
 
-<div class="section">
-  <div class="overlay-container">
-    <div class="color-overlay"></div>
-    <!-- empty first section -->
-  </div>
-</div>
+<div class="section" [ngClass]="{ finished: isSticky }"></div>
 
 <div class="section">
   <div class="overlay-container">
     <div class="color-overlay"></div>
     <div class="container-content">
-      <div class="copy">
+      <div #copyContainer class="copy" [ngClass]="{ animate: copyInview }">
         <p>
           JaneTech provides world class design and development services
           specializing in highly complex digital experiences.
@@ -46,12 +40,16 @@
   <div class="overlay-container">
     <div class="color-overlay"></div>
     <div class="container-content">
-      <div class="connect">
+      <div
+        #connectContainer
+        class="connect"
+        [ngClass]="{ animate: connectInview }"
+      >
         Connect
       </div>
-      <div class="email">
+      <div class="email" [ngClass]="{ animate: connectInview }">
         Hello@JaneTech.io
-        <div class="animate">
+        <div class="hover-content">
           We're always open to have a conversation.
         </div>
       </div>

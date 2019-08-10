@@ -1,0 +1,12 @@
+.footer {
+    position: sticky;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 18px;
+
+    .footer-content {
+        color: #FFF;
+        font-size: 16px;
+    }
+}
