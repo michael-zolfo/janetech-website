@@ -1,0 +1,212 @@
+@import '../../styles.scss';
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+$logo-animation-transition-speed: 1s;
+$logo-sticky-width: 35%;
+$logo-width: 75%;
+
+@mixin animation-styles($name, $duration) {
+  -webkit-animation-name: $name; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: $duration; 
+  animation-name: $name;
+  animation-duration: $duration; 
+}
+
+@mixin animation-fade-in {
+  opacity: 1;
+  @include animation-styles(fade-in, $logo-animation-transition-speed);
+}
+
+#background-video {
+  display: block; 
+  min-height: 100%; 
+  min-width: 100%; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  pointer-events: none;
+}
+
+.sticky {
+  opacity: 1;
+  position: fixed;
+  top: 37%;
+  width: 100%;
+  z-index: 1;
+
+  @include animation-styles(slide-logo-up-three-pixels, $logo-animation-transition-speed);
+
+  &.animate {
+    top: 3%;
+
+    @include animation-styles(slide-logo-up, $logo-animation-transition-speed);
+  }
+}
+
+.sticky-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: $logo-width;
+  opacity: 1;
+
+  @include animation-styles(fade-in, $logo-animation-transition-speed);
+
+  &.animate {
+    width: $logo-sticky-width;
+
+    @include animation-styles(shrink-logo, $logo-animation-transition-speed);
+  }
+}
+
+.section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  pointer-events: none;
+
+  @media only screen and (max-width: 501px) {
+    
+    &.section:nth-child(4) {
+      height: 70vh;
+    }
+  
+    &.section:last-child {
+      height: 80vh;
+    }
+  }
+
+  &.finished {
+    height: 30vh;
+  }
+}
+
+.overlay-container {
+  min-height: 80%;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.container-content {
+  padding-right: 10%;
+  padding-left: 10%;
+  position: relative;
+  z-index: 5;
+}
+
+.copy {
+  font-size: 5vw;
+  opacity: 0;
+
+  &.animate {
+    @include animation-fade-in();
+  }
+  @media only screen and (max-width: 501px) {
+    font-size: 6vw;
+  }
+}
+
+.connect {
+  padding-top: 15%;
+  color: rgb(80, 227, 194);
+  font-weight: 300;
+  font-size: 3vw;
+  opacity: 0;
+
+  @media only screen and (max-width: 501px) {
+    opacity: 1;
+    font-size: 4vw;
+  }
+
+  &.animate {
+    @include animation-fade-in();
+  }
+}
+
+.email {
+  font-weight: bold;
+  font-size: 9vw;
+  opacity: 0;
+  pointer-events: all;
+
+  @media only screen and (max-width: 501px) {
+    opacity: 1;
+  }
+
+  cursor: -webkit-grab; cursor: grab;
+
+  .hover-content {
+    font-size: 2vw;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: all;
+
+    @media only screen and (max-width: 501px) {
+      opacity: 1;
+      font-size: 3vw;
+    }
+  }
+
+  &.animate {
+    @include animation-fade-in();
+
+    &:hover {
+      .hover-content {
+        @include animation-fade-in();
+      }
+
+      @media only screen and (max-width: 501px) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// --- Animations  --- //
+@-webkit-keyframes shrink-logo {
+  from { width: $logo-width; }
+  to { width: $logo-sticky-width; }
+}
+
+@keyframes shrink-logo {
+  from {width: $logo-width;}
+  to { width: $logo-sticky-width;}
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes slide-logo-up-three-pixels {
+  from { top: 40%; }
+  to { top: 37%; }
+}
+
+@keyframes slide-logo-up-three-pixels {
+  from { top: 40%; }
+  to { top: 37%; }
+}
+
+@-webkit-keyframes slide-logo-up {
+  to { top: 3%; }
+  from { top: 37%; }
+}
+
+@keyframes slide-logo-up {
+  to { top: 3%; }
+  from { top: 37%; }
+}

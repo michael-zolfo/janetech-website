@@ -1,0 +1,58 @@
+<div class="sticky" [ngClass]="{ animate: isSticky }">
+  <img
+    src="../../assets/images/logo.png"
+    class="sticky-img"
+    [ngClass]="{ animate: isSticky }"
+  />
+</div>
+
+<video
+  id="background-video"
+  poster="../../assets/images/background-poster.jpeg"
+  autoplay
+  loop
+  muted
+>
+  <source src="../../assets/videos/background.mp4" type="video/mp4" />
+</video>
+
+<div class="section" [ngClass]="{ finished: isSticky }"></div>
+
+<div class="section">
+  <div class="overlay-container">
+    <div class="color-overlay"></div>
+    <div class="container-content">
+      <div #copyContainer class="copy" [ngClass]="{ animate: copyInview }">
+        <p>
+          JaneTech provides world class design and development services
+          specializing in highly complex digital experiences.
+        </p>
+        <p>
+          We have years of success building widely functional, beautifully
+          designed products at scale.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="overlay-container">
+    <div class="color-overlay"></div>
+    <div class="container-content">
+      <div
+        #connectContainer
+        class="connect"
+        [ngClass]="{ animate: connectInview }"
+      >
+        Connect
+      </div>
+      <div class="email" [ngClass]="{ animate: connectInview }">
+        Hello@JaneTech.io
+        <div class="hover-content">
+          We're always open to have a conversation.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
